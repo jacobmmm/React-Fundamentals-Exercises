@@ -37,6 +37,10 @@ const profiles = [
   },
 ];
 
+profiles.sort((a,b) => a.userID - b.userID)
+
+console.log("Sorted profiles are: ",profiles)
+
 const users = {
   1: {
     id: 1,
@@ -93,7 +97,14 @@ const movies = {
   },
 };
 
+//let favouriteMovies = profiles.map((prof) => movies[] )
+
+
+
 const App = () => {
+  console.log("Sorted profiles are: ",profiles)
+  console.log("Movie random index: ",movies[2])
+  console.log("Profile random index: ",profiles[1])
   return (
     <div>
       <header className="App-header">
@@ -101,6 +112,17 @@ const App = () => {
         <h1 className="App-title">ReactND - Coding Practice</h1>
       </header>
       <h2>Favorite Movies</h2>
+      <ul>
+        {profiles.map((profile) => 
+
+        {
+          return <li key={profile.userID} >{users[profile.userID].name}'s favourite movie is {movies[profile.favoriteMovieID].name} </li>
+         
+        }
+        
+        
+        )   }
+      </ul>
     </div>
   );
 };
