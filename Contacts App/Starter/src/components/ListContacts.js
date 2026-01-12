@@ -1,9 +1,23 @@
 
 
 const ListContacts = ( { contacts, removeContact } ) => {
+
+    const [query,setQuery] = useState("")
+
+    const updateQuery = (query) => {
+        setQuery(query)
+    }
     
     return( 
-        <ol className="contact-list">
+
+        <div className="list-contacts">
+
+        <div className="list-contacts-top">
+            <input className="search-contacts" type="text" placeholder="Search Contact" value={query} onChange={(e) => updateQuery(e.target.value)} />
+        </div>
+
+
+         <ol className="contact-list">
         {
             contacts.map((contact) => (
                 <li key={contact.id} className="contact-list-item"> 
@@ -25,6 +39,9 @@ const ListContacts = ( { contacts, removeContact } ) => {
             ))
         }
         </ol>
+
+        </div>
+       
 
     )
 
