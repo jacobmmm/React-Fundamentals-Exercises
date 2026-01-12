@@ -18,6 +18,15 @@ function CountdownTimer({ startTime }) {
         return prevTime - 1;
       });
     }, 1000);
+
+    return () => {
+      
+  clearInterval(intervalId);
+  console.log('Interval stopped');
+
+      console.log("No more ticking")
+
+    }
     
     // TODO: Add cleanup function here
     
